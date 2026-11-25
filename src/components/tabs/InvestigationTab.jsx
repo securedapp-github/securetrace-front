@@ -256,7 +256,7 @@ export default function InvestigationTab() {
           </select>
         </div>
 
-        <div className="md:col-span-2 flex items-end">
+        <div className="md:col-span-2 flex items-end mt-4">
           <button
             onClick={handleRunAnalysis}
             disabled={isAnalyzing}
