@@ -123,7 +123,7 @@ export default function LandingPage({ onLoginClick, onDemoLogin }) {
         </section>
 
         {/* Live Preview Mockup */}
-        <section className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto pb-24">
+        <section id="investigation" className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto pb-24 scroll-mt-24">
           <div className="relative rounded-2xl border border-slate-700/80 bg-slate-900/90 shadow-2xl shadow-blue-500/10 overflow-hidden">
             <div className="h-10 border-b border-slate-800 bg-slate-950/60 px-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -202,7 +202,7 @@ export default function LandingPage({ onLoginClick, onDemoLogin }) {
         </section>
 
         {/* Feature Grid */}
-        <section id="features" className="py-20 border-t border-slate-800/80 bg-slate-950/40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <section id="features" className="py-20 border-t border-slate-800/80 bg-slate-950/40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-white tracking-tight">Everything You Need for Web3 Investigation & Risk</h2>
             <p className="mt-3 text-slate-400 text-base">Engineered for security analysts, Web3 protocols, compliance teams, and DeFi investigators.</p>
@@ -248,6 +248,141 @@ export default function LandingPage({ onLoginClick, onDemoLogin }) {
                 Automated security audit ranking. Scans for reentrancy, unverified bytecode, proxy delegate vulnerabilities, and flash-loan risk.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Credit Scoring Section (#scoring) */}
+        <section id="scoring" className="py-20 border-t border-slate-800/80 bg-slate-900/30 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+              Risk &amp; Reputation Engine
+            </span>
+            <h2 className="text-3xl font-bold text-white tracking-tight mt-4">
+              Dual Credit Scoring for Wallets &amp; Smart Contracts
+            </h2>
+            <p className="mt-3 text-slate-400 text-base">
+              Combine behavioral wallet profiling with LLM-powered smart contract vulnerability auditing.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Wallet Score Showcase */}
+            <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Wallet Credit Score</h3>
+                  <span className="text-xs text-slate-400 font-mono">Powered by DappScore API</span>
+                </div>
+              </div>
+
+              <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                Real-time risk scoring (0–100 risk index &amp; 0–1000 credit score). Identifies allowance exploit signatures, address sweep patterns, transaction graph betweenness centrality, and address poisoning vanity attacks.
+              </p>
+
+              <div className="space-y-3 font-mono text-xs">
+                <div className="flex items-center justify-between p-3 rounded-lg bg-slate-950/80 border border-slate-800">
+                  <span className="text-slate-400">Exploit &amp; Allowance Rules</span>
+                  <span className="text-emerald-400 font-semibold">Active Behavioral Detection</span>
+                </div>
+                <div className="flex items-center justify-between p-3 rounded-lg bg-slate-950/80 border border-slate-800">
+                  <span className="text-slate-400">Address Poisoning Mimicry</span>
+                  <span className="text-amber-400 font-semibold">Prefix/Suffix Vanity Matching</span>
+                </div>
+                <div className="flex items-center justify-between p-3 rounded-lg bg-slate-950/80 border border-slate-800">
+                  <span className="text-slate-400">Sanctions &amp; AML Exposure</span>
+                  <span className="text-cyan-400 font-semibold">OFAC / Mixer Cross-Check</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Contract Score Showcase */}
+            <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+                  <Cpu className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Contract Credit Score</h3>
+                  <span className="text-xs text-slate-400 font-mono">OpenRouter LLM + Verified Bytecode</span>
+                </div>
+              </div>
+
+              <p className="text-sm text-slate-300 leading-relaxed mb-6">
+                Automated security audits and trust scores (0–100, Tier A–F). Fetches verified source code from Etherscan/BSCScan, inspects compiler configuration, and identifies reentrancy, unverified delegatecall, and flash-loan vectors.
+              </p>
+
+              <div className="space-y-3 font-mono text-xs">
+                <div className="flex items-center justify-between p-3 rounded-lg bg-slate-950/80 border border-slate-800">
+                  <span className="text-slate-400">Bytecode &amp; Source Fetching</span>
+                  <span className="text-purple-400 font-semibold">Etherscan / BSCScan v2</span>
+                </div>
+                <div className="flex items-center justify-between p-3 rounded-lg bg-slate-950/80 border border-slate-800">
+                  <span className="text-slate-400">Severity Breakdown</span>
+                  <span className="text-rose-400 font-semibold">Critical / High / Medium / Low</span>
+                </div>
+                <div className="flex items-center justify-between p-3 rounded-lg bg-slate-950/80 border border-slate-800">
+                  <span className="text-slate-400">Caching Layer</span>
+                  <span className="text-cyan-400 font-semibold">Instant MySQL Response</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Enterprise Specs & API Architecture (#specs) */}
+        <section id="specs" className="py-20 border-t border-slate-800/80 bg-slate-950/60 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-24">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+              Architecture &amp; Specifications
+            </span>
+            <h2 className="text-3xl font-bold text-white tracking-tight mt-4">
+              Enterprise-Grade Multi-Chain Forensics
+            </h2>
+            <p className="mt-3 text-slate-400 text-base">
+              Built on resilient Node.js microservices, RPC batch indexing, and secure MySQL caching.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+              <div className="text-cyan-400 font-mono text-xs font-bold mb-2">01 / MULTI-CHAIN COVERAGE</div>
+              <h3 className="text-base font-bold text-white mb-2">7+ EVM Networks</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Full RPC &amp; Etherscan v2 event log tracking for Ethereum, BNB Smart Chain, Polygon, Arbitrum, Optimism, Base, and Avalanche.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+              <div className="text-blue-400 font-mono text-xs font-bold mb-2">02 / DEEP LOGS &amp; SPLIT DETECTION</div>
+              <h3 className="text-base font-bold text-white mb-2">Forward BFS Tracing</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Breadth-first search tracing over up to 500,000 blocks with automated fan-out stops (&gt;5 split addresses) and dynamic asset whitelist formatting.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
+              <div className="text-indigo-400 font-mono text-xs font-bold mb-2">03 / SECURITY &amp; COMPLIANCE</div>
+              <h3 className="text-base font-bold text-white mb-2">JWT &amp; Google SSO</h3>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Institutional OAuth2 and signed JWT token enforcement across all analytical endpoints, preventing unauthorized access and API bypass.
+              </p>
+            </div>
+          </div>
+
+          {/* Launch CTA */}
+          <div className="mt-16 text-center">
+            <button
+              onClick={onLoginClick}
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-sm hover:from-cyan-400 hover:to-blue-500 transition-all shadow-xl shadow-cyan-500/20 cursor-pointer"
+            >
+              <Zap className="w-4 h-4" />
+              Launch SecureTrace Dashboard
+            </button>
           </div>
         </section>
       </main>

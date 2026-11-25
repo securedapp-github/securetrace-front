@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getApiUrl } from '../../config/api';
 import {
   TrendingUp,
   TrendingDown,
@@ -39,7 +40,7 @@ export default function PortfolioTab() {
 
     try {
       const token = localStorage.getItem('securetrace_token');
-      const url = `/api/portfolio/${address.trim()}${forceRefresh ? '?refresh=true' : ''}`;
+      const url = getApiUrl(`/api/portfolio/${address.trim()}${forceRefresh ? '?refresh=true' : ''}`);
       const res = await fetch(url, {
         headers: {
           ...(token ? { Authorization: `Bearer ${token}` } : {}),

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getApiUrl } from '../../config/api';
 import {
   ShieldAlert,
   ShieldCheck,
@@ -397,7 +398,7 @@ export default function WalletScoreTab() {
 
     try {
       const token = localStorage.getItem('securetrace_token');
-      const res = await fetch('/api/wallet/score', {
+      const res = await fetch(getApiUrl('/api/wallet/score'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -32,6 +32,7 @@ import {
 } from 'lucide-react';
 import FundFlowGraph from '../FundFlowGraph';
 import HackForensicCard from '../HackForensicCard';
+import { getApiUrl } from '../../config/api';
 
 export default function InvestigationTab() {
   const [txHash, setTxHash] = useState('0xb8502e9fd5f5737de0f3e3139be8df8fcd6e7fa6e43b5ff05c27dcaa57b81eee'); // PancakeBunny BSC Exploit
@@ -62,7 +63,7 @@ export default function InvestigationTab() {
       attempts++;
       try {
         const token = localStorage.getItem('securetrace_token');
-        const res = await fetch(`/api/analysis/trace/${caseId}`, {
+        const res = await fetch(getApiUrl(`/api/analysis/trace/${caseId}`), {
           headers: {
             ...(token ? { Authorization: `Bearer ${token}` } : {}),
           },
@@ -91,7 +92,7 @@ export default function InvestigationTab() {
 
   // Fetch Whitelisted Assets for the chain
   useEffect(() => {
-    fetch(`/api/whitelisted-assets?chainId=${chain}`)
+    fetch(getApiUrl(`/api/whitelisted-assets?chainId=${chain}`))
       .then((res) => res.json())
       .then((data) => {
         if (data.success && data.assets) {
@@ -118,7 +119,7 @@ export default function InvestigationTab() {
 
     try {
       const token = localStorage.getItem('securetrace_token');
-      const response = await fetch('/api/analysis/primary', {
+      const response = await fetch(getApiUrl('/api/analysis/primary'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

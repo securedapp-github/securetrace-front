@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getApiUrl } from '../../config/api';
 import {
   Cpu,
   Search,
@@ -53,7 +54,7 @@ export default function ContractScoreTab() {
 
     try {
       const token = localStorage.getItem('securetrace_token');
-      const res = await fetch('/api/contract/score', {
+      const res = await fetch(getApiUrl('/api/contract/score'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

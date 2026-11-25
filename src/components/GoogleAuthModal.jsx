@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import { GoogleLogin } from '@react-oauth/google';
 
+import { getApiUrl } from '../config/api';
+
 export default function GoogleAuthModal({ isOpen, onClose, onAuthSuccess }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -23,7 +25,7 @@ export default function GoogleAuthModal({ isOpen, onClose, onAuthSuccess }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/auth/google', {
+      const res = await fetch(getApiUrl('/api/auth/google'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,7 +60,7 @@ export default function GoogleAuthModal({ isOpen, onClose, onAuthSuccess }) {
     const name = presetName || customName || 'SecuredApp Security Analyst';
 
     try {
-      const res = await fetch('/api/auth/google', {
+      const res = await fetch(getApiUrl('/api/auth/google'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
