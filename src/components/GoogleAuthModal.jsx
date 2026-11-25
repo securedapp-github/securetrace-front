@@ -44,7 +44,7 @@ export default function GoogleAuthModal({ isOpen, onClose, onAuthSuccess }) {
       }
     } catch (err) {
       console.error(err);
-      setError('Failed to connect to backend server. Make sure backend is running on port 5000.');
+      setError('Failed to connect to backend server');
     } finally {
       setLoading(false);
     }
